@@ -150,6 +150,124 @@ for(let i = 0; i < word.length; i++){
 }
 
 
+console.log("--------------------")
+
+//FUNCTIONS (Block of code for performing a specific task anywhere where its called)
+
+//Function definition
+function welcomePerson(name, level){
+    console.log("Welcome " + name + "!" + " You were assigned a level of " + level)
+}
+
+//Calling a function
+welcomePerson("Robertas", 15);
+welcomePerson("Gandalf", 20);
+
+
+function fn(){
+    return "My return"
+    console.log("My return")
+}
+
+console.log(fn())
+
+function sumOfTwoNumbers(a, b){
+    return a + "+" + b + " is" + " " + (a+b)
+}
+
+console.log(sumOfTwoNumbers(10,6))
+
+
+//Create a fucntion that converts Celsius to Fahrenheit
+// F = C x 1.8 + 32
+
+function celsiusToFahrenheit(celsius){
+    let fahrenheit = celsius * 1.8 + 32
+    return celsius + " celsius is " + fahrenheit + " fahrenheit"
+}
+
+console.log(celsiusToFahrenheit(1))
+console.log(celsiusToFahrenheit(12))
+console.log(celsiusToFahrenheit(32))
+
+//Another way of defining a fucntion 
+const convertCelsiusToFahrenheit2 = (celsius) => {
+    let fahrenheit = celsius * 1.8 + 32
+    return celsius + " celsius is " + fahrenheit + " fahrenheit"
+}
+
+
+console.log(convertCelsiusToFahrenheit2(0))
+
+
+console.log("--------------------")
 
 
 
+//ARRAYS (data structure that can hold multiple data values in one variable)
+
+let arr = [20,"Hello", true]
+
+let prices = [5, 15, 30, 50]
+console.log(prices[0])
+console.log(prices[prices.length-1]) 
+console.log(prices)
+//Adding new element to array
+prices.push(200)
+console.log(prices)
+
+//Callback function
+//Function filters trough the array and makes a new array of prices higher than 20
+let newPrices = prices.filter((element) => element > 20)
+
+console.log(newPrices)
+
+//Filter out all the "Fail" elements in an array
+// Example ['A+', 'A', 'Fail'] => ['A+', 'A']
+
+let grades = ["A+", "A", "Fail"]
+
+let newGrades = grades.filter((element) => element !== "Fail")
+console.log(newGrades)
+
+
+//Perform the same task above but without array.filter method
+
+let newGrades2 = []
+
+for(let i = 0; i < grades.length; i++){
+    if(grades[i] !== "Fail"){
+        newGrades2.push(grades[i])
+    }
+}
+
+console.log(newGrades2)
+
+//Array.map method
+
+let array = [1, 4, 9, 16]
+
+let newArray = array.map((element) => "cat")
+
+console.log(newArray)
+
+
+
+//Turn each element in an array of dollars into cents
+// Example [1,2,3] => [100,200,300]
+
+let dollars = [1,2,3]
+
+let cents = dollars.map((element) => element * 100)
+
+console.log(cents)
+
+//Perform the same task abovewithout array.map method
+
+let cents2 = []
+
+for(let i = 0; i < dollars.length; i++){
+    cents2.push(dollars[i] * 100)
+}
+
+console.log(cents2)
