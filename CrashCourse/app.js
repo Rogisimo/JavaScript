@@ -271,3 +271,92 @@ for(let i = 0; i < dollars.length; i++){
 }
 
 console.log(cents2)
+
+
+
+//OBJECTS (used to store multiple properties in one variable)
+
+let users = [
+{
+    userName: "Robert",
+    email: "Robert@gmail.com",
+    password: "test123",
+    age: 23,
+},
+{
+    userName: "Bob",
+    email: "Bob@gmail.com",
+    password: "test321",
+    age: 50,
+}
+];
+console.log(users[0])
+console.log(users[1])
+console.log("My name is " + users[0].userName + " and i am " + users[0].age + " years old."
+ + " You can contact me at: " + users[0].email)
+ console.log("My name is " + users[1].userName + " and i am " + users[1].age + " years old."
+ + " You can contact me at: " + users[1].email)
+
+ function logIn(email, password){
+    for(let i = 0; i < users.length; i ++){
+        if(users[i].email === email){
+            if(users[i].password === password){
+                console.log("User " + email + " logged in") 
+            }
+            else{
+                console.log("Incorect password")
+            }
+            return
+        }
+    }
+    console.log("Could not find an email that matches" + email)
+ }
+
+ logIn("Robert@gmail.com", "test123")
+ logIn("Bob@gmail.com", "test321")
+
+ //Create a register function that accepts:
+ // username, email, password, age
+ // add registered users to users array
+
+ function registerUser(user){
+    users.push(user)
+    console.log("User " + user.email + " registered")
+    console.log("All users:")
+    console.log(users)
+ }
+
+ registerUser({
+    userName: "Tom",
+    email: "Tom@gmail.com",
+    password: "12345",
+    age: 31,
+ })
+
+ 
+
+ //DOM (Document object model allows you to acces the styling and content of elements on your website)
+
+ //First way to acces an element (BEST WAY) this can also acces classes with .
+console.log(document.querySelector('#title'))
+
+//Second way
+console.log(document.getElementById('title'))
+
+//Change html with this
+document.querySelector("#title").innerHTML = "Magic!"
+
+//Change css
+document.querySelector(".secondTitle").style.color = "red"
+
+
+function changeColorToBlue(){
+    document.querySelector(".secondTitle").style.color = "blue"
+}
+
+function toggleDarkMode(){
+    document.querySelector("body").classList.toggle("dark-theme")
+}
+
+
+

@@ -1,0 +1,10 @@
+*{
+    transition: 300ms ease all;
+}
+
+.dark-theme{
+    background-color: black;
+}
+.dark-theme *{
+    color: white;
+}
